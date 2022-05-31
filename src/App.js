@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Counter from './Counter';
 import './App.css';
 
 function App() {
-  return (
-    <div> 
-      <Header name="Progbr" links={["Sobre", "Comprar", "Contato", "login"]}></Header>
-      <Counter count={0}></Counter>
-    </div>
-  );
-}
+
+  const [show, setShow] = useState(true);
+
+  let time = 0;
+
+  useEffect(()=> {
+    let timer = setInterval(()=>{
+      time++;
+      console.log(time)
+      if(time > 5){
+        clearInterval(timer);
+        setShow(false);
+      }
+    }, 1000)
+  }, [])
+  
+  
+
+  if(show){
+    return (
+      <div> 
+        <Counter count={3}></Counter>
+      </div>
+    );
+  }else {
+    return (
+      <div> 
+        Sem contador
+      </div>
+    );
+  }
+  }
 
 export default App;

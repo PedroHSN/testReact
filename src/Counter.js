@@ -7,6 +7,10 @@ function Counter(props){
   useEffect(()=>{
     setCount(parseInt(localStorage.getItem("count")));
 
+    return ()=> {
+      console.log("Não tem mais contador")
+    }
+
   },[]);
 
   useEffect(() => {
