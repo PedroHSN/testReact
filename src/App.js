@@ -7,7 +7,7 @@ function App() {
   return (
     <div> 
       <Header name="Progbr" links={["Sobre", "Comprar", "Contato", "login"]}></Header>
-      <Counter count={5}></Counter>
+      <Counter count={0}></Counter>
     </div>
   );
 }
